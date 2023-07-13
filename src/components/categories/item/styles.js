@@ -27,4 +27,21 @@ export const styles= StyleSheet.create({
         textShadowOffset: { width: -1, height: 1 },
         textShadowRadius: 6,
       },
+
+      imageBackgroundTablet:{
+        width:'100%',
+        height: 250,
+        justifyContent: 'flex-end',
+
+      },
+
+      categoryNameTablet:{
+        fontSize: 35,
+        fontFamily: FONTS.bold,
+        color: COLORS.white,
+        padding: 15,
+        textShadowColor: 'rgba(0,0, 0, 0.75)',
+        textShadowOffset: { width: -1, height: 1 },
+        textShadowRadius: 6,
+      }
 });

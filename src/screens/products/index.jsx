@@ -1,4 +1,4 @@
-import { View, Text, Button, TouchableOpacity, FlatList, Image, ImageBackground } from "react-native";
+import { View, Text, Button, TouchableOpacity, FlatList, Image, ImageBackground,useWindowDimensions } from "react-native";
 import { useState } from "react";
 import { Ionicons } from '@expo/vector-icons';
 import { styles } from "./styles";
@@ -42,13 +42,16 @@ function Product ({onHandleGoBack, categorySelected}){
     };
 
 
+    const {width, height, scale, fontScale} = useWindowDimensions();
+    const istablet = width > 650;
+
     return (
        <View style={styles.container}>       
          
 
             <TouchableOpacity style={styles.goBack} onPress={onHandleGoBack}>
-                <Ionicons onPress={onHandleGoBack} name="arrow-back-circle" size={25} color={COLORS.secodary}/>
-                <CustomText style={styles.goBackText} type="regular">Go Back</CustomText>               
+                <Ionicons onPress={onHandleGoBack} name="arrow-back-circle" size={istablet? 35 : 25} color={COLORS.secodary}/>
+                <CustomText style={istablet? styles.goBackTextTablet: styles.goBackText} type="regular">Go Back</CustomText>               
             </TouchableOpacity>
           
             <View style={styles.header}>
@@ -60,7 +63,7 @@ function Product ({onHandleGoBack, categorySelected}){
                     placeholder="Search"
                     borderColor={borderColor}
                 />    
-                {search.length > 0 && <Ionicons style={styles.clearIcon} onPress={clearSearch} name="close-circle-outline" size={30} color={COLORS.secodary} />}
+                {search.length > 0 && <Ionicons style={styles.clearIcon} onPress={clearSearch} name="close-circle-outline" size={istablet? 45 :30} color={COLORS.secodary} />}
             </View>
 
             <FlatList
@@ -68,11 +71,11 @@ function Product ({onHandleGoBack, categorySelected}){
             data={search.length > 0 ? filteredProducts : filteredProductsByCategory}
             renderItem={({item})=> 
             // <View style={[styles.productContainer, {backgroundColor: categorySelected.color}] }> 
-            <TouchableOpacity onPress={()=>null} style={styles.productContainer}> 
-                <ImageBackground source={{uri: item.image}} style={styles.productImage} resizeMethod="resize" resizeMode="contain" />
+            <TouchableOpacity onPress={()=>null} style={ istablet? styles.productContainerTablet : styles.productContainer}> 
+                <ImageBackground source={{uri: item.image}} style={istablet? styles.productImageTablet : styles.productImage} resizeMethod="resize" resizeMode="contain" />
                 <View style={styles.productDetail}>
-                    <CustomText style={styles.productName} numberOfLines={1} ellipsizeMode="tail" type="regular">{item.name}</CustomText>         
-                    <CustomText style={styles.productPrice} type="bold">{`${item.currency.code} ${item.price}`} 
+                    <CustomText style={istablet? styles.productNameTablet : styles.productName} numberOfLines={1} ellipsizeMode="tail" type="regular">{item.name}</CustomText>         
+                    <CustomText style={istablet? styles.productPriceTablet: styles.productPrice} type="bold">{`${item.currency.code} ${item.price}`} 
                     </CustomText>
                 </View>
             </TouchableOpacity>} contentContainerStyle={styles.productsContent}
@@ -80,7 +83,7 @@ function Product ({onHandleGoBack, categorySelected}){
             />
             {filteredProducts.length == 0 && search.length > 0 && (
                <View style ={styles.notFound}> 
-                    <CustomText style={styles.notFoundText} type="regular"> No Products Found </CustomText> 
+                    <CustomText style={istablet? styles.notFoundTextTablet :  styles.notFoundText} type="regular"> No Products Found </CustomText> 
                 </View>
             )}
 

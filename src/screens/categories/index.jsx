@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, SafeAreaView, View, useWindowDimensions } from 'react-native';
+import { FlatList, SafeAreaView, View } from 'react-native';
 import { CategoryItem } from '../../components';
 import CATEGORIES  from '../../constants/data/categories.json';
 import {styles} from './styles'
@@ -8,7 +8,7 @@ import {styles} from './styles'
 
 function Categories({onSelectCategory}) {
   
-  const {width, height, scale, fontScale} = useWindowDimensions();
+  // const {width, height, scale, fontScale} = useWindowDimensions();
 
   // console.warn ({
   //   width, height, scale, 

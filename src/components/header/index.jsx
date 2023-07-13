@@ -1,17 +1,21 @@
-import { View, Text } from 'react-native';
+import { View, useWindowDimensions } from 'react-native';
 
 import { styles } from './styles';
 import CustomText from '../customText/customText';
 
 const Header = ({ title }) => {
-  return (
-    <View style={styles.container}>
 
-      <CustomText type="bold" style={styles.title}>
+  
+  const {width} = useWindowDimensions();
+  const istablet = width > 650;
+
+  return (
+    <View style={istablet ? styles.containerTablet : styles.container}>
+
+      <CustomText type="bold" style={ istablet? styles.titleTablet : styles.title}>
         {title}
       </CustomText>
 
-      {/* <Text style={styles.title}>{title}</Text> */}
     </View>
   );
 };
