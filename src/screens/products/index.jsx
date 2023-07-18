@@ -2,13 +2,14 @@ import { View, Text, Button, TouchableOpacity, FlatList, Image, ImageBackground,
 import { useState } from "react";
 import { Ionicons } from '@expo/vector-icons';
 import { styles } from "./styles";
-import { Input } from "../../components";
+import { Input } from '../../components';
 import { COLORS } from "../../themes";
 import PRODUCTS from "../../constants/data/products.json";
 import CustomText from "../../components/customText/customText";
 
-function Product ({onHandleGoBack, categorySelected}){
+function Product ({ navigation, route }){
 
+    const { categoryId, color } = route.params;
     const [search, setSearch]= useState('');
     const[filteredProducts, setFilteredProducts] = useState([]);   
     const[borderColor, setBorderColor]= useState(COLORS.primary);
@@ -23,7 +24,7 @@ function Product ({onHandleGoBack, categorySelected}){
     const onHandleFocus = () =>{
 
     }
-    const filteredProductsByCategory = PRODUCTS.filter((product)=>product.categoryId == categorySelected.categoryId);
+    const filteredProductsByCategory = PRODUCTS.filter((product)=>product.categoryId === categoryId);
 
     const filterBySearch = (query)=>{
         let updatedProductList = [...filteredProductsByCategory];
@@ -42,17 +43,17 @@ function Product ({onHandleGoBack, categorySelected}){
     };
 
 
-    const {width, height, scale, fontScale} = useWindowDimensions();
+    const {width} = useWindowDimensions();
     const istablet = width > 650;
 
     return (
        <View style={styles.container}>       
          
 
-            <TouchableOpacity style={styles.goBack} onPress={onHandleGoBack}>
-                <Ionicons onPress={onHandleGoBack} name="arrow-back-circle" size={istablet? 35 : 25} color={COLORS.secodary}/>
+            {/* <TouchableOpacity style={styles.goBack} >
+                <Ionicons name="arrow-back-circle" size={istablet? 35 : 25} color={COLORS.secodary}/>
                 <CustomText style={istablet? styles.goBackTextTablet: styles.goBackText} type="regular">Go Back</CustomText>               
-            </TouchableOpacity>
+            </TouchableOpacity> */}
           
             <View style={styles.header}>
                 <Input
@@ -65,6 +66,8 @@ function Product ({onHandleGoBack, categorySelected}){
                 />    
                 {search.length > 0 && <Ionicons style={styles.clearIcon} onPress={clearSearch} name="close-circle-outline" size={istablet? 45 :30} color={COLORS.secodary} />}
             </View>
+
+            
 
             <FlatList
             style={styles.products} showsVerticalScrollIndicator={false}

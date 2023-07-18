@@ -3,9 +3,9 @@ import {styles} from "./styles"
 import { COLORS } from "../../../themes";
 import CustomText from "../../customText/customText";
 
-const CategoryItem =({ id, name, backgroundColor, backgroundImage, onSelectCategory}) => {
+const CategoryItem =({ id, name, backgroundColor, backgroundImage, onSelectCategory, style}) => {
 
-    const {width, height, scale, fontScale} = useWindowDimensions();
+    const {width} = useWindowDimensions();
     const istablet = width > 650;
 
     // console.warn ({
@@ -16,7 +16,7 @@ const CategoryItem =({ id, name, backgroundColor, backgroundImage, onSelectCateg
 
     return (
         <TouchableHighlight underlayColor={COLORS.touchablecolor} onPress={()=>onSelectCategory(id)} style={[styles.container, {backgroundColor}]}>
-            <ImageBackground source={{uri:backgroundImage}} style={istablet? styles.imageBackgroundTablet : styles.imageBackground} resizeMode= { istablet ? "contain" : "cover"}>
+            <ImageBackground source={{uri:backgroundImage}} style={istablet? styles.imageBackgroundTablet : [styles.imageBackground, style]} resizeMode= { istablet ? "contain" : "cover"}>
                 <CustomText style={ istablet? styles.categoryNameTablet : styles.categoryName} type="regular">{name}</CustomText>
             </ImageBackground>
         </TouchableHighlight>

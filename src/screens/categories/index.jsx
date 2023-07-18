@@ -4,24 +4,26 @@ import { CategoryItem } from '../../components';
 import CATEGORIES  from '../../constants/data/categories.json';
 import {styles} from './styles'
 
+import { ORIENTATION } from '../../constants/orientation';
+import useOrientation from '../../hooks/useOrientation';
 
 
-function Categories({onSelectCategory}) {
+
+function Categories({ navigation }) {
   
-  // const {width, height, scale, fontScale} = useWindowDimensions();
+  const orientation = useOrientation();
 
-  // console.warn ({
-  //   width, height, scale, 
-  //   fontScale,  
-  // })
-
+  const onSelectCategory = ({ categoryId, color, name }) => {
+    navigation.navigate('Products', { categoryId, color, name });
+  };
+ 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>       
         <FlatList
           style={styles.categoryContainer} contentContainerStyle={styles.listCategory}
           data={CATEGORIES}
-          renderItem={({ item }) => <CategoryItem {...item} onSelectCategory={()=>onSelectCategory({categoryId: item.id, color:item.backgroundColor})}/>}
+          renderItem={({ item }) => <CategoryItem {...item} onSelectCategory={()=>onSelectCategory({categoryId: item.id, color:item.backgroundColor})}  style={orientation === ORIENTATION.LANDSCAPE ? styles.categoryItemLandscape : {}}/>}
           keyExtractor={(item) => item.id} showsVerticalScrollIndicator={false}
         />              
       </View>
