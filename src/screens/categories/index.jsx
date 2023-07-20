@@ -23,7 +23,7 @@ function Categories({ navigation }) {
         <FlatList
           style={styles.categoryContainer} contentContainerStyle={styles.listCategory}
           data={CATEGORIES}
-          renderItem={({ item }) => <CategoryItem {...item} onSelectCategory={()=>onSelectCategory({categoryId: item.id, color:item.backgroundColor})}  style={orientation === ORIENTATION.LANDSCAPE ? styles.categoryItemLandscape : {}}/>}
+          renderItem={({ item }) => <CategoryItem {...item} onSelectCategory={()=>onSelectCategory({categoryId: item.id, color:item.backgroundColor, name:item.name})}  style={orientation === ORIENTATION.LANDSCAPE ? styles.categoryItemLandscape : {}}/>}
           keyExtractor={(item) => item.id} showsVerticalScrollIndicator={false}
         />              
       </View>

@@ -39,7 +39,10 @@ function Product ({ navigation, route }){
         setSearch('');
         setFilteredProducts([]);
 
-         // no me funciona el set este... no me lo deja vacio. tal vez solo se ve asi en el emulador.---> pendiente
+    };
+
+    const onSelectProduct = ({ productId, name }) => {
+        navigation.navigate('ProductDetail', { productId, color, name });
     };
 
 
@@ -50,11 +53,6 @@ function Product ({ navigation, route }){
        <View style={styles.container}>       
          
 
-            {/* <TouchableOpacity style={styles.goBack} >
-                <Ionicons name="arrow-back-circle" size={istablet? 35 : 25} color={COLORS.secodary}/>
-                <CustomText style={istablet? styles.goBackTextTablet: styles.goBackText} type="regular">Go Back</CustomText>               
-            </TouchableOpacity> */}
-          
             <View style={styles.header}>
                 <Input
                     onHandleBlur={onHandleBlur}
@@ -74,7 +72,7 @@ function Product ({ navigation, route }){
             data={search.length > 0 ? filteredProducts : filteredProductsByCategory}
             renderItem={({item})=> 
             // <View style={[styles.productContainer, {backgroundColor: categorySelected.color}] }> 
-            <TouchableOpacity onPress={()=>null} style={ istablet? styles.productContainerTablet : styles.productContainer}> 
+            <TouchableOpacity onPress={() => onSelectProduct({ productId: item.id, name: item.name })} style={ istablet? styles.productContainerTablet : styles.productContainer}> 
                 <ImageBackground source={{uri: item.image}} style={istablet? styles.productImageTablet : styles.productImage} resizeMethod="resize" resizeMode="contain" />
                 <View style={styles.productDetail}>
                     <CustomText style={istablet? styles.productNameTablet : styles.productName} numberOfLines={1} ellipsizeMode="tail" type="regular">{item.name}</CustomText>         

@@ -2,10 +2,10 @@
     {
         "id": 1,
         "categoryId": 1,
-        "name": "Samsung Galaxy S23 Ultra",
-        "description": "Samsung Galaxy S23 Ultra 5G 256GB",
+        "name": "Diseño y Creacion de espacios",
+        "description": "Transformamos tu entorno en un oasis natural que refleja tu estilo y personalidad, con atención meticulosa a cada detalle para lograr un resultado espectacular y armonioso.",
         "price": 1250,
-        "image": "https://firebasestorage.googleapis.com/v0/b/ecommerce-app-c91d9.appspot.com/o/products%2Fsamsung-galaxy-s23-ultra.png?alt=media&token=64c9c470-e5b9-44d0-939e-38bad88555c5",
+        "image": "https://i.postimg.cc/YSKCnyY4/dise-o.png",
         "currency": {
             "symbol": "$",
             "code": "USD",
@@ -13,21 +13,16 @@
         },
         "quantity": 1,
         "tags": [
-            "samsung",
-            "galaxy",
-            "s23",
-            "ultra",
-            "5g",
-            "256gb"
+            "Diseño paisajístico",
+            "Arquitectura del paisaje",
+            "Espacios exteriores",
+            "Diseño de jardines",
+            "Decoración natural"
         ],
         "features": [
-            "6.8-inch Dynamic AMOLED 2X display",
-            "Snapdragon 888 chipset",
-            "12GB RAM",
-            "256GB storage",
-            "108MP+10MP+10MP+12MP quad rear cameras",
-            "40MP front camera",
-            "5000mAh battery"
+            "Diseño paisajístico personalizado.",
+            "Elementos naturales y armonía estética.",
+            "Espacios funcionales y sostenibles."
         ],
         "rating": 5,
         "stock": 10
@@ -35,10 +30,10 @@
     {
         "id": 2,
         "categoryId": 1,
-        "name": "Iphone 14 Pro Max",
-        "description": "Iphone 14 Pro Max 256GB",
+        "name": "Planes de Mejoras",
+        "description": "Potenciamos la belleza de tus áreas verdes con soluciones personalizadas y de calidad, implementando mejoras estratégicas que realzan su encanto y funcionalidad.",
         "price": 1500,
-        "image": "https://firebasestorage.googleapis.com/v0/b/ecommerce-app-c91d9.appspot.com/o/products%2Fiphone-14-pro-max.png?alt=media&token=313523a6-6c31-42c6-9034-7cb32b7c56a1",
+        "image": "https://i.postimg.cc/7LnwBPqc/mejoras.png",
         "currency": {
             "symbol": "$",
             "code": "USD",
@@ -46,31 +41,27 @@
         },
         "quantity": 1,
         "tags": [
-            "iphone",
-            "14",
-            "pro",
-            "max",
-            "256gb"
+            "Optimización de áreas verdes",
+            "Renovación de jardines",
+            "Mejora estética de jardines",
+            "Actualización de paisajes",
+            "Rediseño de espacios exteriores"
         ],
         "features": [
-            "6.7-inch Super Retina XDR display",
-            "A15 Bionic chipset",
-            "6GB RAM",
-            "256GB storage",
-            "12MP+12MP+12MP triple rear cameras",
-            "12MP front camera",
-            "5000mAh battery"
+            "Propuestas adaptadas a tus necesidades.",
+            "Mejora de infraestructuras verdes existentes.",
+            "Optimización de recursos y belleza."
         ],
         "rating": 4.5,
         "stock": 6
     },
     {
         "id": 3,
-        "categoryId": 2,
-        "name": "Macbook Pro 2023 M2",
-        "description": "Macbook Pro 2023 M2 2TB",
+        "categoryId": 1,
+        "name": "Relleno nivelacion y colocacion de cesped",
+        "description": "Creamos un suelo perfecto y un césped exuberante para disfrutar al máximo, asegurando una superficie uniforme y de primera calidad que embellece tu entorno.",
         "price": 3500,
-        "image": "https://firebasestorage.googleapis.com/v0/b/ecommerce-app-c91d9.appspot.com/o/products%2Fmacbook-pro-m2.png?alt=media&token=a2fdd760-b7ff-4458-ae7f-4543bcea974d",
+        "image": "https://i.postimg.cc/131kLx7Z/relleno.png",
         "currency": {
             "symbol": "$",
             "code": "USD",
@@ -78,29 +69,27 @@
         },
         "quantity": 1,
         "tags": [
-            "macbook",
-            "pro",
-            "2023",
-            "m2",
-            "2tb"
+            "Preparación del terreno",
+            "Nivelado del suelo",
+            "Instalación de césped",
+            "Colocación de césped artificial",
+            "Suelo fértil"
         ],
         "features": [
-            "16-inch Retina display",
-            "Apple M2 chipset",
-            "32GB RAM",
-            "2TB storage",
-            "16GB AMD Radeon Pro 6700M graphics"
+            "Preparación del suelo para arraigo.",
+            "Instalación de césped de alta calidad.",
+            "Superficie uniforme y estética."
         ],
         "rating": 5,
         "stock": 1
     },
     {
         "id": 4,
-        "categoryId": 3,
-        "name": "Tribute Lounge Chair",
-        "description": "For the home owner looking for the perfect dash of uniqueness, the colorful Tribute leather chairs will speak volumes of its owner's sense of style.",
+        "categoryId": 2,
+        "name": "Riego por aspersion",
+        "description": "Mantenemos tus plantas hidratadas con un sistema de riego uniforme y eficiente, brindando un suministro de agua adecuado para un crecimiento saludable y exuberante.",
         "price": 550,
-        "image": "https://firebasestorage.googleapis.com/v0/b/ecommerce-app-c91d9.appspot.com/o/products%2Ftribute-lounge-chair.png?alt=media&token=fc252570-6ab9-4d10-a680-96f10f5a2eb5",
+        "image": "https://i.postimg.cc/43xsSknx/aspersion.png",
         "currency": {
             "symbol": "$",
             "code": "USD",
@@ -108,25 +97,27 @@
         },
         "quantity": 1,
         "tags": [
-            "tribute",
-            "lounge",
-            "chair"
+            "Sistemas de riego",
+            "Aspersores automáticos",
+            "Riego uniforme",
+            "Ahorro de agua",
+            "Programación de riego"
         ],
         "features": [
-            "Material: Leather",
-            "Color: Brown",
-            "Dimensions: 30 x 30 x 30 inches"
+            "Cobertura completa y uniforme.",
+            "Riego eficiente y ahorro de agua.",
+            "Mantenimiento de jardines saludables."
         ],
         "rating": 4.5,
         "stock": 5
     },
     {
         "id": 5,
-        "categoryId": 4,
-        "name": "Samsung Galaxy Tab S8 Ultra",
-        "description": "Samsung Galaxy Tab S8 Ultra 512GB",
+        "categoryId": 2,
+        "name": "Riego por goteo",
+        "description": "Optimizamos el consumo de agua con un riego preciso y ahorrativo para tus plantas, asegurando una distribución equitativa y controlada que fomenta su desarrollo óptimo.",
         "price": 1350,
-        "image": "https://firebasestorage.googleapis.com/v0/b/ecommerce-app-c91d9.appspot.com/o/products%2Fsamsung-galaxy-tab-s8-ultra.png?alt=media&token=491df109-7db9-40cb-9599-3252e99ed081",
+        "image": "https://i.postimg.cc/NF7ntFzq/goteo.png",
         "currency": {
             "symbol": "$",
             "code": "USD",
@@ -134,23 +125,189 @@
         },
         "quantity": 1,
         "tags": [
-            "samsung",
-            "galaxy",
-            "tab",
-            "s8",
-            "ultra",
-            "512gb"
+            "Riego eficiente",
+            "Goteo preciso",
+            "Conservación del agua",
+            "Sistemas de goteo",
+            "Riego controlado"
         ],
         "features": [
-            "14.6-inch Super AMOLED display",
-            "Snapdragon 888 chipset",
-            "12GB RAM",
-            "512GB storage",
-            "12MP+12MP dual rear cameras",
-            "8MP front camera",
-            "10000mAh battery"
+            "Suministro preciso y dirigido.",
+            "Conservación eficiente del agua.",
+            "Riego optimizado para cada planta."
         ],
         "rating": 4,
         "stock": 20
+    },
+    {
+        "id": 6,
+        "categoryId": 2,
+        "name": "Riego automatizado para terrazas y balcones",
+        "description": "Cuida tus espacios exteriores de forma cómoda y automática, con un sistema de riego inteligente y personalizable que se adapta a tus necesidades específicas.",
+        "price": 1350,
+        "image": "https://i.postimg.cc/fR6fHZ8x/automatizacion.png",
+        "currency": {
+            "symbol": "$",
+            "code": "USD",
+            "name": "US Dollar"
+        },
+        "quantity": 1,
+        "tags": [
+            "Riego inteligente",
+            "Automatización de riego",
+            "Riego para espacios reducidos",
+            "Riego programable",
+            "Sensores de humedad"
+        ],
+        "features": [
+            "Programación personalizada y cómoda.",
+            "Riego inteligente y sin esfuerzo.",
+            "Ahorro de tiempo y recursos."
+        ],
+        "rating": 4,
+        "stock": 20
+    },
+   
+    {
+        "id": 7,
+        "categoryId": 3,
+        "name": "Extraccion y poda de arboles",
+        "description": "Realizamos una remoción segura y eficiente de árboles indeseados, aplicando técnicas especializadas para minimizar impactos y garantizar la seguridad de tu entorno.",
+        "price": 1250,
+        "image": "https://i.postimg.cc/WzF4fRWk/extraccion.png",
+        "currency": {
+            "symbol": "$",
+            "code": "USD",
+            "name": "US Dollar"
+        },
+        "quantity": 1,
+        "tags": [
+            "Tala de árboles",
+            "Eliminación de árboles",
+            "Extracción de raíces",
+            "Técnicas de extracción",
+            "Eliminación segura"
+        ],
+        "features": [
+            "Extracción segura y profesional.",
+            "Técnicas de manejo de riesgos.",
+            "Mantenimiento del entorno intacto."
+        ],
+        "rating": 5,
+        "stock": 10
+    },
+    {
+        "id": 8,
+        "categoryId": 3,
+        "name": "Poda en altura",
+        "description": "Mantenemos tus árboles en forma y saludables con nuestra experiencia en poda de altura, preservando su estructura y promoviendo su vitalidad y belleza.",
+        "price": 1250,
+        "image": "https://i.postimg.cc/Bv7LhCSR/altura.png",
+        "currency": {
+            "symbol": "$",
+            "code": "USD",
+            "name": "US Dollar"
+        },
+        "quantity": 1,
+        "tags": [
+            "Poda de árboles altos",
+            "Técnicas de poda elevada",
+            "Herramientas de poda en altura",
+            "Poda de ramas altas",
+            "Mantenimiento vertical"
+        ],
+        "features": [
+            "Poda experta y sin riesgos.",
+            "Conservación del tamaño y forma.",
+            "Árboles sanos y estéticamente atractivos."
+        ],
+        "rating": 5,
+        "stock": 10
+    },
+    {
+        "id": 9,
+        "categoryId": 3,
+        "name": "Poda de formacion",
+        "description": "Modelamos tus arbustos y árboles jóvenes para un crecimiento armonioso y estético, brindándoles estructura y belleza duradera que realza la apariencia general de tus espacios verdes.",
+        "price": 1250,
+        "image": "https://i.postimg.cc/LXdR6qNn/formacion.png",
+        "currency": {
+            "symbol": "$",
+            "code": "USD",
+            "name": "US Dollar"
+        },
+        "quantity": 1,
+        "tags": [
+            "Modelado de arbustos",
+            "Técnicas de poda estética",
+            "Formación de árboles jóvenes",
+            "Crecimiento controlado",
+            "Equilibrio y simetría"
+        ],
+        "features": [
+            "Modelado artístico de arbustos.",
+            "Desarrollo equilibrado de árboles jóvenes.",
+            "Crecimiento armonioso y estético."
+        ],
+        "rating": 5,
+        "stock": 10
+    },
+    {
+        "id": 10,
+        "categoryId": 3,
+        "name": "Mantenimiento de Cesped",
+        "description": "Brindamos un cuidado integral para mantener tu césped verde, sano y sin malezas, realizando servicios de corte, fertilización, control de plagas y aireación para un césped exuberante y saludable.",
+        "price": 1250,
+        "image": "https://i.postimg.cc/26fRNsSW/mantenimiento.png",
+        "currency": {
+            "symbol": "$",
+            "code": "USD",
+            "name": "US Dollar"
+        },
+        "quantity": 1,
+        "tags": [
+            "Corte de césped",
+            "Fertilización de césped",
+            "Aireación del suelo",
+            "Control de malezas",
+            "Escarificación del césped"
+        ],
+        "features": [
+            "Corte regular y uniforme.",
+            "Fertilización para un crecimiento saludable.",
+            "Control de malezas y plagas."
+        ],
+        "rating": 5,
+        "stock": 10
+    },
+    {
+        "id": 11,
+        "categoryId": 4,
+        "name": "Servicio de control de plagas",
+        "description": "Protegemos tus plantas de las plagas de manera efectiva y respetuosa con el medio ambiente, implementando estrategias seguras y eficaces para garantizar su salud y vitalidad a largo plazo.",
+        "price": 1250,
+        "image": "https://i.postimg.cc/s2d0MpCd/plagas.png",
+        "currency": {
+            "symbol": "$",
+            "code": "USD",
+            "name": "US Dollar"
+        },
+        "quantity": 1,
+        "tags": [
+            "Plagas de jardín",
+            "Control orgánico de plagas",
+            "Prevención de enfermedades",
+            "Tratamientos fitosanitarios",
+            "Control integrado de plagas"
+        ],
+        "features": [
+            "Prevención y erradicación de plagas.",
+            "Enfoque ecológico y seguro.",
+            "Protección de plantas y entorno."
+        ],
+        "rating": 5,
+        "stock": 10
     }
+       
+    
 ]

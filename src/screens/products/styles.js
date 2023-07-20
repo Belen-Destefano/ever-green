@@ -42,8 +42,6 @@ export const styles = StyleSheet.create({
        
         backgroundColor: COLORS.background,
         borderRadius: 10, 
-        // paddingHorizontal: 10,   
-        // paddingVertical: 10,   
         width: '45%',
         marginHorizontal:10,
         shadowColor: '#000',
@@ -61,8 +59,6 @@ export const styles = StyleSheet.create({
        
         backgroundColor: COLORS.background,
         borderRadius: 10, 
-        // paddingHorizontal: 10,   
-        // paddingVertical: 10,   
         width: '45%',
         marginHorizontal:20,
         shadowColor: '#000',
@@ -83,12 +79,12 @@ export const styles = StyleSheet.create({
     productImageTablet:{
         width: '100%',
         height: 250,
-        backgroundColor: '#d4ddd4',
+        backgroundColor: COLORS.grey,
     },
     productImage:{
         width: '100%',
         height: 150,
-        backgroundColor: '#d4ddd4',
+        backgroundColor: COLORS.grey,
     },
     productDetailTablet:{
         padding: 10,

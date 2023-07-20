@@ -8,11 +8,6 @@ const CategoryItem =({ id, name, backgroundColor, backgroundImage, onSelectCateg
     const {width} = useWindowDimensions();
     const istablet = width > 650;
 
-    // console.warn ({
-    //     width, height, scale, 
-    //     fontScale,  
-    // })
-
 
     return (
         <TouchableHighlight underlayColor={COLORS.touchablecolor} onPress={()=>onSelectCategory(id)} style={[styles.container, {backgroundColor}]}>
