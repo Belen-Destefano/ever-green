@@ -2,25 +2,25 @@
     {
         "id": 1,
         "name": "Paisajismo",
-        "backgroundColor": "#0b4609",
+        "backgroundColor": "#edab31",
         "backgroundImage": "https://i.postimg.cc/3R7vN9t0/paisajismo.png"
     },
     {
         "id": 2,
         "name": "Sistema de Riego",
-        "backgroundColor": "#448336",
+        "backgroundColor": "#404a3f",
         "backgroundImage": "https://i.postimg.cc/2ygjbSC9/riego.png"
     },
     {
         "id": 3,
         "name": "Mantenimiento",
-        "backgroundColor": "#9bbb6b",
+        "backgroundColor": "#8f6b5d",
         "backgroundImage": "https://i.postimg.cc/mDF5ZL6g/mantenimiento.png"
     },
     {
         "id": 4,
         "name": "Control de Plagas",
-        "backgroundColor": "#c7d695",
+        "backgroundColor": "#6e2036",
         "backgroundImage": "https://i.postimg.cc/Y9bh974T/plagas.png"
     }
    

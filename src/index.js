@@ -1,6 +1,8 @@
 // import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet, View, ActivityIndicator } from 'react-native';
 import {useFonts} from 'expo-font';
+import { Provider } from 'react-redux';
+import { store } from './store';
 
 
 // import { Header } from './components';
@@ -41,9 +43,11 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
-     <RootNavigator/>
-    </SafeAreaView>
+    <Provider store={store}>
+      <SafeAreaView style={styles.container}>
+        <RootNavigator />
+      </SafeAreaView>
+    </Provider>
   );
 }
 

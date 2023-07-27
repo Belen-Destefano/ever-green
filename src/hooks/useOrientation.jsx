@@ -17,8 +17,7 @@ export default function useOrientation() {
       setScreenOrientation(currentOrientation);
     };
 
-    const screenOrientationListener =
-      ScreenOrientation.addOrientationChangeListener(orientationChange);
+    const screenOrientationListener = ScreenOrientation.addOrientationChangeListener(orientationChange);
 
     initScreenOrientation();
 

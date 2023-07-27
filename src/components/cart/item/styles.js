@@ -51,6 +51,8 @@ export const styles = StyleSheet.create({
   },
   name: {
     fontSize: 13,
+    // widht para que quede alineado junto con numberOfLines y ellipsizeMode
+    width: 180,
    
   },
   price: {

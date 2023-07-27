@@ -2,6 +2,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { Orders } from '../screens';
 import { COLORS, FONTS } from '../themes';
+import { Logo } from "../components";
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +21,8 @@ const OrdersNavigator = () => {
         },
         headerTintColor: COLORS.white,
         animation: 'fade_from_bottom',
+
+        headerRight: () => <Logo />
       })}>
       <Stack.Screen name="Orders" component={Orders} />
     </Stack.Navigator>

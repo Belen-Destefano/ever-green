@@ -4,12 +4,14 @@ import { Ionicons } from '@expo/vector-icons';
 import { styles } from "./styles";
 import { Input } from '../../components';
 import { COLORS } from "../../themes";
-import PRODUCTS from "../../constants/data/products.json";
+// import PRODUCTS from "../../constants/data/products.json";
 import CustomText from "../../components/customText/customText";
+import { useSelector } from "react-redux";
 
 function Product ({ navigation, route }){
 
     const { categoryId, color } = route.params;
+    const products = useSelector((state) => state.products.data);
     const [search, setSearch]= useState('');
     const[filteredProducts, setFilteredProducts] = useState([]);   
     const[borderColor, setBorderColor]= useState(COLORS.primary);
@@ -24,14 +26,30 @@ function Product ({ navigation, route }){
     const onHandleFocus = () =>{
 
     }
-    const filteredProductsByCategory = PRODUCTS.filter((product)=>product.categoryId === categoryId);
+    const filteredProductsByCategory = products.filter((product)=>product.categoryId === categoryId);
 
-    const filterBySearch = (query)=>{
+    // const filterBySearch = (query)=>{
+    //     let updatedProductList = [...filteredProductsByCategory];
+    //     updatedProductList = updatedProductList.filter((product)=>{
+    //         return product.name.toLowerCase().indexOf(query.toLowerCase()) != -1;
+    //     });
+
+    //     setFilteredProducts(updatedProductList);
+    // };
+
+    // FILTRO POR NAME Y POR TAG 
+    const filterBySearch = (query) => {
         let updatedProductList = [...filteredProductsByCategory];
-        updatedProductList = updatedProductList.filter((product)=>{
-            return product.name.toLowerCase().indexOf(query.toLowerCase()) != -1;
+        updatedProductList = updatedProductList.filter((product) => {
+          const productName = product.name.toLowerCase();
+          const productTags = product.tags.map(tag => tag.toLowerCase());
+      
+          const nameMatch = productName.includes(query.toLowerCase());
+          const tagMatch = productTags.some(tag => tag.includes(query.toLowerCase()));
+      
+          return nameMatch || tagMatch;
         });
-
+      
         setFilteredProducts(updatedProductList);
     };
 

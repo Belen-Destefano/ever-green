@@ -53,10 +53,27 @@ export const styles = StyleSheet.create({
     gap: 10,
   },
   containerTag: {
-    padding: 10,
-    borderRadius: 10,
+    padding: 6,
+    borderRadius: 7,
   },
   tag: {
     color: COLORS.white,
+  },
+  containerButton: {
+    marginVertical: 10,
+  },
+  addToCartButton: {
+    width: '100%',
+    backgroundColor: COLORS.grey,
+    padding: 15,
+    borderRadius: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  addToCartText: {
+    fontFamily: FONTS.medium,
+    fontSize: 16,
+    color: COLORS.secodary,
+
   },
 });

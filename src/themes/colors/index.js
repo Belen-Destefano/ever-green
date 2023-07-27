@@ -1,7 +1,7 @@
 export const COLORS = {
-    primary: '#475e04',
-    secodary: '#324008',
-    touchablecolor: '#8fbb8f',
+    primary: '#3d582c',
+    secodary: '#202e17',
+    touchablecolor: '#9dbb72',
     text: '#000000',
     background: '#F2F8F2',
     black: '#000000',

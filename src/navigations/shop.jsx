@@ -3,6 +3,7 @@ import {Categories, Products, ProductDetail} from "../screens"
 import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet, TouchableOpacity, useWindowDimensions } from "react-native";
 import { COLORS, FONTS } from "../themes";
+import { Logo } from "../components";
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +26,8 @@ function ShopNavigator(){
             headerTintColor: COLORS.white,
             // NO FUNCIONA AUN, FIJARME DESPUES
             animation: 'fade_from_bottom',
+            headerRight: () => <Logo />
+
           
            
             })}>
@@ -32,7 +35,8 @@ function ShopNavigator(){
             <Stack.Screen name ="Products" component={Products} options={({navigation, route}) =>(
                 { 
                     headerStyle:{
-                     backgroundColor: route.params.color
+                     backgroundColor: COLORS.primary
+                    //  backgroundColor: route.params.color
                     },
                     
                     headerLeft: ()=>(
@@ -48,7 +52,7 @@ function ShopNavigator(){
             <Stack.Screen name="ProductDetail" component={ProductDetail} options={({ navigation, route }) => (
                 {
                     headerStyle: {
-                    backgroundColor: route.params.color,
+                    backgroundColor: COLORS.primary,
                     },
                     headerLeft: () => (
                         <TouchableOpacity style={styles.goBack} onPress={() => navigation.goBack()}>

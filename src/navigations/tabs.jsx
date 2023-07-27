@@ -6,6 +6,7 @@ import OrdersNavigator from './orders';
 import ShopNavigator from './shop';
 import { COLORS, FONTS } from '../themes';
 
+
 const BottomTab = createBottomTabNavigator();
 
 const TabsNavigator = () => {
@@ -26,6 +27,7 @@ const TabsNavigator = () => {
         tabBarIconStyle: {
           fontSize: 22,
         },
+      
       }}>
       <BottomTab.Screen
         name="ShopTab"
