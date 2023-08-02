@@ -1,5 +1,5 @@
 // import React, { useState } from 'react';
-import { SafeAreaView, StyleSheet, View, ActivityIndicator } from 'react-native';
+import { StyleSheet, View, ActivityIndicator } from 'react-native';
 import {useFonts} from 'expo-font';
 import { Provider } from 'react-redux';
 import { store } from './store';
@@ -44,9 +44,9 @@ export default function App() {
 
   return (
     <Provider store={store}>
-      <SafeAreaView style={styles.container}>
+      <View style={styles.container}>
         <RootNavigator />
-      </SafeAreaView>
+      </View>
     </Provider>
   );
 }

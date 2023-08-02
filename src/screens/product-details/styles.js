@@ -64,8 +64,8 @@ export const styles = StyleSheet.create({
   },
   addToCartButton: {
     width: '100%',
-    backgroundColor: COLORS.grey,
-    padding: 15,
+    backgroundColor: COLORS.background,
+    padding: 10,
     borderRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
@@ -75,5 +75,10 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     color: COLORS.secodary,
 
+  },
+  containerLoader: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

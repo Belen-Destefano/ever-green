@@ -1,17 +1,19 @@
-import { View, Text, Button, TouchableOpacity, FlatList, Image, ImageBackground,useWindowDimensions } from "react-native";
+import { View, Text, Button, TouchableOpacity, FlatList, Image, ImageBackground,useWindowDimensions, ActivityIndicator } from "react-native";
 import { useState } from "react";
 import { Ionicons } from '@expo/vector-icons';
 import { styles } from "./styles";
 import { Input } from '../../components';
 import { COLORS } from "../../themes";
 // import PRODUCTS from "../../constants/data/products.json";
+import { useGetProductsByCategoryQuery } from '../../store/products/api';
 import CustomText from "../../components/customText/customText";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 function Product ({ navigation, route }){
 
     const { categoryId, color } = route.params;
-    const products = useSelector((state) => state.products.data);
+    // const products = useSelector((state) => state.products.data);
+    const { data, error, isLoading } = useGetProductsByCategoryQuery(categoryId);
     const [search, setSearch]= useState('');
     const[filteredProducts, setFilteredProducts] = useState([]);   
     const[borderColor, setBorderColor]= useState(COLORS.primary);
@@ -26,7 +28,7 @@ function Product ({ navigation, route }){
     const onHandleFocus = () =>{
 
     }
-    const filteredProductsByCategory = products.filter((product)=>product.categoryId === categoryId);
+    const filteredProductsByCategory = data?.filter((product)=>product.categoryId === categoryId);
 
     // const filterBySearch = (query)=>{
     //     let updatedProductList = [...filteredProductsByCategory];
@@ -66,6 +68,13 @@ function Product ({ navigation, route }){
 
     const {width} = useWindowDimensions();
     const istablet = width > 650;
+
+    if (isLoading)
+    return (
+      <View style={styles.containerLoader}>
+        <ActivityIndicator size="large" color={COLORS.primary} />
+      </View>
+    );
 
     return (
        <View style={styles.container}>       

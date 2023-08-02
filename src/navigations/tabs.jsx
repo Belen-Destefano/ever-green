@@ -5,11 +5,14 @@ import CartNavigator from './cart';
 import OrdersNavigator from './orders';
 import ShopNavigator from './shop';
 import { COLORS, FONTS } from '../themes';
+import { useSelector } from 'react-redux';
 
 
 const BottomTab = createBottomTabNavigator();
 
 const TabsNavigator = () => {
+  const cartItems = useSelector((state) => state.cart.items);
+
   return (
     <BottomTab.Navigator
       initialRouteName="ShopTab"
@@ -47,7 +50,7 @@ const TabsNavigator = () => {
           tabBarIcon: ({ focused, color }) => (
             <Ionicons name={focused ? 'cart' : 'cart-outline'} size={20} color={color} />
           ),
-          tabBarBadge: 2,
+          tabBarBadge: cartItems.length,
           tabBarBadgeStyle: {
             backgroundColor: COLORS.secodary,
             color: COLORS.white,

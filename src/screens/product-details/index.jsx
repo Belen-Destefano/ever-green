@@ -5,27 +5,37 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../store/cart/cart.slice';
 
 import CustomText from '../../components/customText/customText';
-import { Image, Text, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { COLORS } from '../../themes';
+import { useGetProductByIdQuery } from '../../store/products/api';
 
 
 function ProductDetail({ navigation, route }) {
 
   const dispatch = useDispatch();
 
-  const products = useSelector((state) => state.products.data);
+  // const products = useSelector((state) => state.products.data);
   const { color, productId } = route.params;
 
-  const product = products.find((product) => product.id === productId);
+  const { data, isLoading, error } = useGetProductByIdQuery(productId);
+
+  const product = data?.find((product) => product.id === productId);
 
   const onAddToCart = () => {
     dispatch(addToCart(product));
   };
 
+  if (isLoading)
+  return (
+    <View style={styles.containerLoader}>
+      <ActivityIndicator size="large" color={COLORS.primary} />
+    </View>
+  );
+
 
   // console.warn({ product });
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       {/* <View style={[styles.containerImage, { backgroundColor: color }]}> */}
       <View style={[styles.containerImage, { backgroundColor: COLORS.background }]}>
       {/* <View style={styles.containerImage}> */}
@@ -50,7 +60,7 @@ function ProductDetail({ navigation, route }) {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 

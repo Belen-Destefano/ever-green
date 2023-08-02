@@ -105,9 +105,17 @@ export const styles = StyleSheet.create({
         fontSize: 14,
      
     },
+    productDetail:{
+        padding: 5,
+    },
 
     notFoundTextTablet:{
         fontSize: 30,
-    }
+    },
+    containerLoader: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
 
 });
