@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput,TouchableOpacity, ImageBackground } from 'react-native';
 import { useDispatch } from 'react-redux';
 
 import { styles } from './styles';
 import { useSignInMutation, useSignUpMutation } from '../../store/auth/api';
 import { setUser } from '../../store/auth/auth.slice';
 import { COLORS } from '../../themes';
+
+const backgroundImageURL = 'https://i.postimg.cc/sx9LnrgV/white-flower-petals-with-water-drops-pollen.jpg';
 
 const Auth = () => {
   const dispatch = useDispatch();
@@ -21,12 +23,17 @@ const Auth = () => {
   const [signUp] = useSignUpMutation();
 
   const onHandlerAuth = async () => {
+    
     try {
       if (isLogin) {
+        
         const result = await signIn({ email, password });
         if (result?.data) dispatch(setUser(result.data));
+
+        
       } else {
-        await signUp({ email, password });
+        const bla = await signUp({ email, password });
+        
       }
     } catch (error) {
       console.error(error);
@@ -34,7 +41,7 @@ const Auth = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <ImageBackground source={{ uri: backgroundImageURL }} style={styles.container} resizeMode="cover">
       <View style={styles.content}>
         <Text style={styles.header}>{headerTitle}</Text>
         <Text style={styles.label}>Email</Text>
@@ -69,7 +76,7 @@ const Auth = () => {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </ImageBackground>
   );
 };
 

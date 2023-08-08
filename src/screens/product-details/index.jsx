@@ -33,7 +33,7 @@ function ProductDetail({ navigation, route }) {
   );
 
 
-  // console.warn({ product });
+
   return (
     <ScrollView style={styles.container}>
       {/* <View style={[styles.containerImage, { backgroundColor: color }]}> */}

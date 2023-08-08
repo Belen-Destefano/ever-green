@@ -1,9 +1,10 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {Categories, Products, ProductDetail} from "../screens"
 import { Ionicons } from '@expo/vector-icons';
-import { StyleSheet, TouchableOpacity, useWindowDimensions } from "react-native";
+import { StyleSheet, TouchableOpacity, View, useWindowDimensions } from "react-native";
 import { COLORS, FONTS } from "../themes";
 import { Logo } from "../components";
+import SettingsNavigator from "./settings";
 
 const Stack = createNativeStackNavigator();
 
@@ -13,7 +14,7 @@ function ShopNavigator(){
     const istablet = width > 650;
 
     return(
-        <Stack.Navigator initialRouteName="Categories" screenOptions={() => ({
+        <Stack.Navigator initialRouteName="Categories" screenOptions={({navigation}) => ({
             headerStyle: {
               backgroundColor: COLORS.primary,
               height: 80,
@@ -26,9 +27,20 @@ function ShopNavigator(){
             headerTintColor: COLORS.white,
             // NO FUNCIONA AUN, FIJARME DESPUES
             animation: 'fade_from_bottom',
-            headerRight: () => <Logo />
+           
 
-          
+            headerRight: () => (
+             
+                <TouchableOpacity
+                    style={styles.icon}
+                    onPress={() => navigation.navigate('SettingsStack')}>
+                    <Ionicons name="settings-outline" size={24} color={COLORS.white} />
+                </TouchableOpacity>
+               
+            ),
+            headerLeft: () => (             
+                <Logo/>                 
+            ),  
            
             })}>
             <Stack.Screen name ="Categories" component={Categories}  />
@@ -60,6 +72,18 @@ function ShopNavigator(){
                         </TouchableOpacity>
                     ),
                     title: route.params.name,
+                }
+            )}
+            />
+
+            <Stack.Screen name="SettingsStack" component={SettingsNavigator} options={({ navigation, route }) => ({
+                    headerLeft: () => (
+                        <TouchableOpacity style={styles.goBack} onPress={() => navigation.goBack()}>
+                        <Ionicons name="arrow-back-circle" size={30} color={COLORS.white} />
+                        </TouchableOpacity>
+                    ),
+                    headerShown: false,
+                    headerRight: null,
                 }
             )}
             />

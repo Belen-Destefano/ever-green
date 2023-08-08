@@ -9,6 +9,8 @@ function RootNavigator() {
   return (
     <NavigationContainer>
       {auth?.localId ? <TabsNavigator /> : <AuthNavigator />}
+      {/* {auth?.localId ? <AuthNavigator /> : <TabsNavigator />} */}
+    
     </NavigationContainer>
   );
 }

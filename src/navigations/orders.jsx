@@ -22,7 +22,7 @@ const OrdersNavigator = () => {
         headerTintColor: COLORS.white,
         animation: 'fade_from_bottom',
 
-        headerRight: () => <Logo />
+        headerLeft: () => <Logo />
       })}>
       <Stack.Screen name="Orders" component={Orders} />
     </Stack.Navigator>

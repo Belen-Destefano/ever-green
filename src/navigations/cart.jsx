@@ -22,7 +22,7 @@ const CartNavigator = () => {
         },
         headerTintColor: COLORS.white,
         animation: 'fade_from_bottom',
-        headerRight: () => <Logo />
+        headerLeft: () => <Logo />
       })}>
       <Stack.Screen name="Cart" component={Cart} />
     </Stack.Navigator>
