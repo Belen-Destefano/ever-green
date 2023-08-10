@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
   content: {
     width: '80%',
     maxWidth: 400,
+    minHeight: 400,
     padding: 15,
     margin: 15,
     backgroundColor: COLORS.white,
@@ -77,5 +78,13 @@ export const styles = StyleSheet.create({
     fontSize: 14,
     textAlign: 'center',
     color: COLORS.white,
+  },
+  buttonDisabled: {
+    backgroundColor: COLORS.gray,
+    width: 200,
+    height: 35,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 5,
   },
 });

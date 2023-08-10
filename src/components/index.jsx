@@ -6,3 +6,4 @@ export { default as Logo } from './logo/logo';
 export { default as OrderItem } from './order/item/index';
 export { default as MenuItem } from './menu-item/index';
 export { default as ImageSelector } from './image-selector/index';
+export { default as InputForm } from './input-form/index';
