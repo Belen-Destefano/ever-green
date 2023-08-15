@@ -10,6 +10,7 @@ import { ordersApi } from './orders/api';
 import { productsApi } from './products/api';
 import productsReducer from './products/products.slice';
 import { settingsApi } from './settings/api';
+import { mapsApi } from './maps/api';
 
 
 export const store = configureStore({
@@ -23,6 +24,7 @@ export const store = configureStore({
     [ordersApi.reducerPath]: ordersApi.reducer,
     [authApi.reducerPath]: authApi.reducer,
     [settingsApi.reducerPath]: settingsApi.reducer,
+    [mapsApi.reducerPath]: mapsApi.reducer,
     
   },
   middleware: (getDefaultMiddleware) =>
@@ -32,6 +34,7 @@ export const store = configureStore({
       ordersApi.middleware,
       authApi.middleware,
       settingsApi.middleware,
+      mapsApi.middleware
       
     ),
 });
