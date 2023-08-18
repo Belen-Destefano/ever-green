@@ -4,19 +4,27 @@ import { View, TouchableOpacity } from 'react-native';
 import { styles } from './styles';
 import { Maps } from '../../components';
 import { COLORS } from '../../themes';
+import { useState } from 'react';
 
 const MapsScreen = ({ navigation, route }) => {
-  const { location } = route.params;
+  const { pickedLocation } = route.params;
 
-  console.warn({ location });
-
+  const [selectedCoordinate, setSelectedCoordinate] = useState(null); // Estado para almacenar la coordenada seleccionada
+  
   const onPickedLocation = (coordinate) => {
-    console.warn({ coordinate });
+
+    setSelectedCoordinate(coordinate);
   };
+
+  const navigateToCreateAddress = (coordinate) => {
+
+    navigation.navigate('CreateAddress', { selectedCoordinate });
+  };
+  
 
   navigation.setOptions({
     headerRight: () => (
-      <TouchableOpacity style={styles.iconContainer} onPress={() => null}>
+      <TouchableOpacity style={styles.iconContainer} onPress={navigateToCreateAddress}>
         <Ionicons name="ios-save-outline" size={24} color={COLORS.white} />
       </TouchableOpacity>
     ),
@@ -24,7 +32,7 @@ const MapsScreen = ({ navigation, route }) => {
 
   return (
     <View style={styles.container}>
-      <Maps location={location} onPickedLocation={onPickedLocation} />
+      <Maps pickedLocation={pickedLocation} onPickedLocation={onPickedLocation} />
     </View>
   );
 };

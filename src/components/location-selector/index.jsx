@@ -9,7 +9,8 @@ import { saveMapImageUrl } from '../../store/address/address.slice';
 import { COLORS } from '../../themes';
 import MapPreview from '../map-preview';
 
-const LocationSelector = ({ onLocation }) => {
+const LocationSelector = ({ onLocation, coordinate , navigation  }) => {
+
   const dispatch = useDispatch();
   const [pickedLocation, setPickedLocation] = useState(null);
   const verifyPermissions = async () => {
@@ -28,10 +29,25 @@ const LocationSelector = ({ onLocation }) => {
   };
 
   const mapPreviewUrlImage = pickedLocation
-    ? URL_MAPS({ lat: pickedLocation.lat, lng: pickedLocation.lng, zoom: 15 })
-    : '';
+  ? URL_MAPS({ lat: pickedLocation.lat, lng: pickedLocation.lng, zoom: 15 })
+  : '';
+
+  const handleLocationUpdate = ({ latitude, longitude }) => {
+ 
+    setPickedLocation({ lat: latitude, lng: longitude });
+    onLocation({ lat: latitude, lng: longitude });
+  };
+
+
+  useEffect(() => {
+   
+    if (coordinate) {
+      handleLocationUpdate(coordinate);
+    }
+  }, [coordinate]);
 
   const onHandlerGetLocation = async () => {
+    
     const isLocationPermission = await verifyPermissions();
     if (!isLocationPermission) return;
 
@@ -42,13 +58,32 @@ const LocationSelector = ({ onLocation }) => {
 
     const { latitude, longitude } = location.coords;
 
-    setPickedLocation({ lat: latitude, lng: longitude });
-    onLocation({ lat: latitude, lng: longitude });
+    handleLocationUpdate({ latitude, longitude });
+    
   };
+
+  const onSelectMap = async () => {
+    if (pickedLocation) {
+    
+      navigation.navigate('Maps', { pickedLocation });
+    } else {
+      console.log('NO HAY Picked Location:', pickedLocation);
+      const cordobaLocation = {
+        name: 'Provincia de Córdoba',
+        lat: -31.5, // Latitud de la provincia de Córdoba
+        lng: -64.2, // Longitud de la provincia de Córdoba
+      };
+      navigation.navigate('Maps', { pickedLocation: cordobaLocation });
+      // navigation.navigate('Maps');
+    }
+  };
+
+
 
   useEffect(() => {
     if (pickedLocation) {
       dispatch(saveMapImageUrl(mapPreviewUrlImage));
+   
     }
   }, [pickedLocation]);
 
@@ -58,7 +93,7 @@ const LocationSelector = ({ onLocation }) => {
         <Text style={styles.text}>No location chosen yet!</Text>
       </MapPreview>
       <Button title="Get User Location" onPress={onHandlerGetLocation} color={COLORS.primary} />
-      <Button title="Select on map" onPress={onHandlerGetLocation} color={COLORS.primary} />
+      <Button title="Select on map" onPress={onSelectMap} color={COLORS.primary} />
     </View>
   );
 };

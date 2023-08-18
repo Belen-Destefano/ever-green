@@ -4,9 +4,11 @@ import MapView, { Marker } from 'react-native-maps';
 
 import { styles } from './styles';
 
-const Maps = ({ location, onPickedLocation }) => {
+const Maps = ({ pickedLocation, onPickedLocation }) => {
   const [selectedLocation, setSelectedLocation] = useState(null);
-  const { lat, lng } = location || {};
+  const { lat, lng } = pickedLocation || {};
+
+
 
   const initialRegion = {
     latitude: lat,
@@ -16,6 +18,7 @@ const Maps = ({ location, onPickedLocation }) => {
   };
 
   const onHandlerPickLocation = (event) => {
+
     setSelectedLocation({
       latitude: event.nativeEvent.coordinate.latitude,
       longitude: event.nativeEvent.coordinate.longitude,
