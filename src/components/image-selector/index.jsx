@@ -74,7 +74,7 @@ const ImageSelector = ({ profileImage, onSelect }) => {
           <Image
             source={{ uri: image || profileImage }}
             style={styles.image}
-            resizeMode="contain"
+            resizeMode="cover"
           />
         ) : (
           <Ionicons name="ios-camera" size={24} color={COLORS.primary} />

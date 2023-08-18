@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Image, StyleSheet, Dimensions } from 'react-native';
+import { TouchableOpacity, Image, StyleSheet, Dimensions, Platform } from 'react-native';
 import { COLORS, FONTS } from '../../themes';
 
 const logoUri = 'https://i.postimg.cc/MpfyWV3X/Logo-Makr-3-Fy3yb.png';
@@ -16,7 +16,7 @@ function LogoComponent() {
 
 const styles = StyleSheet.create({
   logoContainer: {
-    marginRight: 10,     
+    marginRight: Platform.OS === 'android' ? 15 : 0,
     padding: 2, 
   },
   logoImage: {

@@ -30,9 +30,14 @@ export const styles = StyleSheet.create({
   },
   header: {
     fontFamily: FONTS.medium,
-    fontSize: 16,
+    fontSize: 22,
     textAlign: 'center',
-    color: COLORS.text,
+    // color: COLORS.text,
+    color: COLORS.white,
+    textShadowColor: 'rgba(0,0, 0, 0.75)',
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 6,
+    
     paddingVertical: 10,
   },
   label: {

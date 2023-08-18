@@ -5,7 +5,7 @@ import { COLORS, FONTS } from '../../../themes';
 export const styles = StyleSheet.create({
   orderItemContainer: {
     flex: 1,
-    height: 145,
+    height: 100,
     flexDirection: 'row',
     backgroundColor: COLORS.white,
     shadowColor: '#000',
@@ -20,14 +20,14 @@ export const styles = StyleSheet.create({
     marginHorizontal: 15,
     marginTop: 15,
     justifyContent: 'space-around',
-    alignItems: 'center',
-    borderRadius: 5,
+    alignItems: 'flex-start',
+    borderRadius: 10,
   },
   orderHeaderContainer: {
     flex: 1,
   },
   orderItemDate: {
-    fontFamily: FONTS.bold,
+    fontFamily: FONTS.medium,
     fontSize: 14,
     color: COLORS.text,
   },

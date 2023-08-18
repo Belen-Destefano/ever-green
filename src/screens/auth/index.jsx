@@ -90,8 +90,8 @@ const Auth = () => {
 
   return (
     <ImageBackground source={{ uri: backgroundImageURL }} style={styles.container} resizeMode="cover">
+      <Text style={styles.header}>{headerTitle}</Text>
       <View style={styles.content}>
-        <Text style={styles.header}>{headerTitle}</Text>
         {/* <Text style={styles.label}>Email</Text> */}
         <InputForm
           // style={styles.input}

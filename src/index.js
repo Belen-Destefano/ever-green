@@ -4,11 +4,20 @@ import {useFonts} from 'expo-font';
 import { Provider } from 'react-redux';
 import { store } from './store';
 
-
+import { init } from './db';
 // import { Header } from './components';
 // import { Categories, Products } from './screens';
 import { COLORS, FONTS } from './themes';
 import RootNavigator from './navigations/index';
+
+init()
+  .then(() => {
+    console.log('Initialized database');
+  })
+  .catch((err) => {
+    console.log('Initializing db failed');
+    console.log(err);
+});
 
 export default function App() {
  
