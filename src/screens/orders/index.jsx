@@ -1,5 +1,5 @@
-import { View, Text, TouchableOpacity } from 'react-native';
-import { FlatList } from 'react-native-gesture-handler';
+import { View } from 'react-native';
+import { FlatList } from 'react-native';
 
 import { styles } from './styles';
 import { OrderItem } from '../../components';

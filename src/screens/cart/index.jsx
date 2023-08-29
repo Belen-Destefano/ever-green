@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -66,7 +66,7 @@ const Cart = ({ navigation }) => {
   if (cart.length === 0) {
     return (
       <View style={styles.emptyCartContainer}>
-        <Text style={styles.emptyCartText}>Your cart is empty</Text>
+        <CustomText style={styles.emptyCartText} type="regular">Your cart is empty</CustomText>
       </View>
     );
   }

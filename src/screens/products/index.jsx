@@ -1,18 +1,19 @@
-import { View, Text, Button, TouchableOpacity, FlatList, Image, ImageBackground,useWindowDimensions, ActivityIndicator } from "react-native";
+import { View, TouchableOpacity, FlatList, ImageBackground,useWindowDimensions, ActivityIndicator } from "react-native";
 import { useState } from "react";
 import { Ionicons } from '@expo/vector-icons';
 import { styles } from "./styles";
 import { Input } from '../../components';
 import { COLORS } from "../../themes";
-// import PRODUCTS from "../../constants/data/products.json";
+
+
+
 import { useGetProductsByCategoryQuery } from '../../store/products/api';
 import CustomText from "../../components/customText/customText";
-// import { useSelector } from "react-redux";
+
 
 function Product ({ navigation, route }){
 
     const { categoryId, color } = route.params;
-    // const products = useSelector((state) => state.products.data);
     const { data, error, isLoading } = useGetProductsByCategoryQuery(categoryId);
     const [search, setSearch]= useState('');
     const[filteredProducts, setFilteredProducts] = useState([]);   
@@ -30,15 +31,7 @@ function Product ({ navigation, route }){
     }
     const filteredProductsByCategory = data?.filter((product)=>product.categoryId === categoryId);
 
-    // const filterBySearch = (query)=>{
-    //     let updatedProductList = [...filteredProductsByCategory];
-    //     updatedProductList = updatedProductList.filter((product)=>{
-    //         return product.name.toLowerCase().indexOf(query.toLowerCase()) != -1;
-    //     });
-
-    //     setFilteredProducts(updatedProductList);
-    // };
-
+    
     // FILTRO POR NAME Y POR TAG 
     const filterBySearch = (query) => {
         let updatedProductList = [...filteredProductsByCategory];
@@ -97,8 +90,9 @@ function Product ({ navigation, route }){
             <FlatList
             style={styles.products} showsVerticalScrollIndicator={false}
             data={search.length > 0 ? filteredProducts : filteredProductsByCategory}
-            renderItem={({item})=> 
-            // <View style={[styles.productContainer, {backgroundColor: categorySelected.color}] }> 
+            renderItem={({item})=> (
+        
+
             <TouchableOpacity onPress={() => onSelectProduct({ productId: item.id, name: item.name })} style={ istablet? styles.productContainerTablet : styles.productContainer}> 
                 <ImageBackground source={{uri: item.image}} style={istablet? styles.productImageTablet : styles.productImage} resizeMethod="resize" resizeMode="contain" />
                 <View style={styles.productDetail}>
@@ -106,7 +100,10 @@ function Product ({ navigation, route }){
                     <CustomText style={istablet? styles.productPriceTablet: styles.productPrice} type="bold">{`${item.currency.code} ${item.price}`} 
                     </CustomText>
                 </View>
-            </TouchableOpacity>} contentContainerStyle={styles.productsContent}
+            </TouchableOpacity>)} 
+               
+ 
+            contentContainerStyle={styles.productsContent}
             keyExtractor={(item)=>item.id.toString()} numColumns={2}            
             />
             {filteredProducts.length == 0 && search.length > 0 && (

@@ -7,20 +7,23 @@ import { COLORS } from '../../themes';
 import { useState } from 'react';
 
 const MapsScreen = ({ navigation, route }) => {
-  const { pickedLocation } = route.params;
 
-  const [selectedCoordinate, setSelectedCoordinate] = useState(null); // Estado para almacenar la coordenada seleccionada
+  // locationtoshow va a ser o el clickeado si Existe , o el de firebase del usuario o coordenadas de cordoba
+  const { locationToShow } = route.params;
+
   
-  const onPickedLocation = (coordinate) => {
 
+
+  const [selectedCoordinate, setSelectedCoordinate] = useState(null); // Estado para almacenar la coordenada seleccionada y enviarsela por route params a createAddress 
+  const onPickedLocation = (coordinate) => {
     setSelectedCoordinate(coordinate);
   };
 
+  // boton guardar que envia la coordenada seleccionada en el mapa interactivo a create address
   const navigateToCreateAddress = (coordinate) => {
-
     navigation.navigate('CreateAddress', { selectedCoordinate });
+   
   };
-  
 
   navigation.setOptions({
     headerRight: () => (
@@ -32,7 +35,7 @@ const MapsScreen = ({ navigation, route }) => {
 
   return (
     <View style={styles.container}>
-      <Maps pickedLocation={pickedLocation} onPickedLocation={onPickedLocation} />
+      <Maps locationToShow={locationToShow} onPickedLocation={onPickedLocation} />
     </View>
   );
 };

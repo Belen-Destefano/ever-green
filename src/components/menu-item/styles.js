@@ -26,7 +26,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   title: {
-    fontFamily: FONTS.medium,
+ 
     fontSize: 14,
     color: COLORS.text,
   },

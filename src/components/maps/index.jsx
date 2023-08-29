@@ -4,9 +4,9 @@ import MapView, { Marker } from 'react-native-maps';
 
 import { styles } from './styles';
 
-const Maps = ({ pickedLocation, onPickedLocation }) => {
+const Maps = ({ locationToShow, onPickedLocation }) => {
   const [selectedLocation, setSelectedLocation] = useState(null);
-  const { lat, lng } = pickedLocation || {};
+  const { lat, lng } = locationToShow || {};
 
 
 

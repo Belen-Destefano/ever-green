@@ -6,7 +6,7 @@ import {
   requestCameraPermissionsAsync,
 } from 'expo-image-picker';
 import { useState } from 'react';
-import { TouchableOpacity, View, Text, Image, Alert } from 'react-native';
+import { TouchableOpacity, View, Image, Alert } from 'react-native';
 
 import { styles } from './styles';
 import { COLORS } from '../../themes';
@@ -15,7 +15,7 @@ const ImageSelector = ({ profileImage, onSelect }) => {
   const [image, setImage] = useState(null);
   const verifyPermissions = async () => {
    
-    // const { status } = await requestMediaLibraryPermissionsAsync();
+
     const { status } = await requestCameraPermissionsAsync();
     
 
@@ -35,21 +35,10 @@ const ImageSelector = ({ profileImage, onSelect }) => {
  
 
   
-  const onHandleTakePhoto = async () => {
-    // const isMediaPermission = await verifyPermissions();
-    console.warn('Entering onHandleTakePhoto');
+  const onHandleTakePhoto = async () => {  
    
     const isCameraPermission = await verifyPermissions();
     if (!isCameraPermission) return ;
-   
-
-
-    // const result = await launchImageLibraryAsync({
-    //   mediaTypes: 'Images',
-    //   allowsEditing: true,
-    //   aspect: [16, 9],
-    //   quality: 0.5,
-    // });
    
     const result = await launchCameraAsync({
       mediaTypes: 'Images',
@@ -57,9 +46,7 @@ const ImageSelector = ({ profileImage, onSelect }) => {
       aspect: [16, 9],
       quality: 0.5,
       base64: true,
-    });
-
-    
+    });  
     
    
 

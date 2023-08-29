@@ -29,7 +29,6 @@ function ShopNavigator(){
               
             },
             headerTintColor: COLORS.white,
-            // NO FUNCIONA AUN, FIJARME DESPUES
             animation: 'fade_from_bottom',
            
 

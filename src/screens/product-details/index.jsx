@@ -1,6 +1,5 @@
 
 import { styles } from './styles';
-// import PRODUCTS from '../../constants/data/products.json';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../store/cart/cart.slice';
 
@@ -14,7 +13,6 @@ function ProductDetail({ navigation, route }) {
 
   const dispatch = useDispatch();
 
-  // const products = useSelector((state) => state.products.data);
   const { color, productId } = route.params;
 
   const { data, isLoading, error } = useGetProductByIdQuery(productId);
@@ -36,9 +34,9 @@ function ProductDetail({ navigation, route }) {
 
   return (
     <ScrollView style={styles.container}>
-      {/* <View style={[styles.containerImage, { backgroundColor: color }]}> */}
+
       <View style={[styles.containerImage, { backgroundColor: COLORS.background }]}>
-      {/* <View style={styles.containerImage}> */}
+
         <Image source={{ uri: product.image }} style={styles.image} resizeMode="contain" />
       </View>
       <View style={styles.content}>
@@ -56,7 +54,7 @@ function ProductDetail({ navigation, route }) {
 
         <View style={styles.containerButton}>
           <TouchableOpacity onPress={onAddToCart} style={styles.addToCartButton}>
-            <Text style={styles.addToCartText}>Add to cart</Text>
+            <CustomText style={styles.addToCartText} type="medium">Add to cart</CustomText>
           </TouchableOpacity>
         </View>
       </View>

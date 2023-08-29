@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
   containerImage: {
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
-    // backgroundColor: COLORS.background
+  
 
     shadowColor: '#000',
     shadowOffset: {
@@ -71,7 +71,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   addToCartText: {
-    fontFamily: FONTS.medium,
+
     fontSize: 16,
     color: COLORS.secodary,
 

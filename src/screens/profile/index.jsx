@@ -17,7 +17,6 @@ const Profile = () => {
     await uploadImageProfile({ localId, image: `data:image/jpeg;base64,${base64}` });
   };
 
-  // console.warn({ userData, isLoadingUserData });
   return (
     <View style={styles.container}>
       <View style={styles.header}>

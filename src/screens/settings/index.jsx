@@ -1,4 +1,4 @@
-import { View, Text, FlatList } from 'react-native';
+import { View, FlatList } from 'react-native';
 
 import { styles } from './styles';
 import { MenuItem } from '../../components';

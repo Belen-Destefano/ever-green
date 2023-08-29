@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
   content: {
     width: '80%',
     maxWidth: 400,
-    minHeight: 400,
+    minHeight: 340,
     padding: 15,
     margin: 15,
     backgroundColor: COLORS.white,
@@ -29,10 +29,10 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
   },
   header: {
-    fontFamily: FONTS.medium,
+
     fontSize: 22,
     textAlign: 'center',
-    // color: COLORS.text,
+
     color: COLORS.white,
     textShadowColor: 'rgba(0,0, 0, 0.75)',
     textShadowOffset: { width: -1, height: 1 },
@@ -60,7 +60,7 @@ export const styles = StyleSheet.create({
   },
   link: {},
   linkText: {
-    fontFamily: FONTS.medium,
+
     fontSize: 14,
     textAlign: 'center',
     color: COLORS.primary,
@@ -79,7 +79,7 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
   },
   buttonText: {
-    fontFamily: FONTS.bold,
+
     fontSize: 14,
     textAlign: 'center',
     color: COLORS.white,

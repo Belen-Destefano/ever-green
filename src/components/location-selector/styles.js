@@ -5,6 +5,7 @@ import { COLORS, FONTS } from '../../themes';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
+    gap: 3,
   },
   preview: {
     width: '100%',
@@ -18,7 +19,6 @@ export const styles = StyleSheet.create({
   text: {
     color: COLORS.text,
     fontSize: 14,
-    fontFamily: FONTS.medium,
   },
   location: {
     color: COLORS.text,

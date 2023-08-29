@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   emptyCartText: {
-    fontFamily: FONTS.regular,
+
     fontSize: 16,
   },
   listContainer: {

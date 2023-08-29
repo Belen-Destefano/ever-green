@@ -1,8 +1,7 @@
 import React from 'react';
 import { ActivityIndicator, FlatList, SafeAreaView, View } from 'react-native';
 import { CategoryItem } from '../../components';
-// import CATEGORIES  from '../../constants/data/categories.json';
-// import { useSelector } from 'react-redux';
+
 
 import {styles} from './styles'
 
@@ -15,7 +14,7 @@ import { COLORS } from '../../themes';
 
 function Categories({ navigation }) {
   
-  // const categories = useSelector((state) => state.categories.data);
+ 
   const { data, error, isLoading } = useGetCategoriesQuery();
 
   const orientation = useOrientation();

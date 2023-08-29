@@ -1,6 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Image, StyleSheet, Dimensions, Platform } from 'react-native';
-import { COLORS, FONTS } from '../../themes';
+
 
 const logoUri = 'https://i.postimg.cc/MpfyWV3X/Logo-Makr-3-Fy3yb.png';
 const { width: windowWidth } = Dimensions.get('window');

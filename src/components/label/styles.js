@@ -8,13 +8,11 @@ export const styles = StyleSheet.create({
   },
   label: {
     fontSize: 14,
-    fontFamily: FONTS.medium,
     paddingVertical: 5,
     color: COLORS.text,
   },
   subLabel: {
-    fontSize: 12,
-    fontFamily: FONTS.regular,
+    fontSize: 12,    
     paddingVertical: 5,
     color: COLORS.text,
   },

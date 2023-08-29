@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { COLORS, FONTS } from '../../../themes';
+import { COLORS } from '../../../themes';
 
 export const styles = StyleSheet.create({
   orderItemContainer: {
@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   orderItemDate: {
-    fontFamily: FONTS.medium,
+
     fontSize: 14,
     color: COLORS.text,
   },
@@ -37,12 +37,12 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   orderItemTotal: {
-    fontFamily: FONTS.bold,
+
     fontSize: 14,
     color: COLORS.text,
   },
   orderItemId: {
-    fontFamily: FONTS.regular,
+
     fontSize: 14,
     color: COLORS.text,
   },
