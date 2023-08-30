@@ -4,6 +4,7 @@ import { View, Button, Text, Alert } from 'react-native';
 import { useDispatch } from 'react-redux';
 import CustomText from '../customText/customText';
 
+
 import { styles } from './styles';
 import { URL_MAPS } from '../../constants/maps';
 import { saveMapImageUrl } from '../../store/address/address.slice';
@@ -15,7 +16,7 @@ import { useGetProfileQuery } from '../../store/settings/api';
 
 const LocationSelector = ({ onLocation, coordinate , navigation  }) => {
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch();  
   const [pickedLocation, setPickedLocation] = useState(null);
   const [savedMap, setSavedMap] = useState(null);
 
@@ -30,6 +31,7 @@ const LocationSelector = ({ onLocation, coordinate , navigation  }) => {
   useEffect(() => {
     if (userData) {
       setSavedMap(userData.location);
+     
     }
   }, [userData]); 
 

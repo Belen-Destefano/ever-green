@@ -19,9 +19,5 @@ export const styles = StyleSheet.create ({
       height: 100,
     },
 
-    containerLoader:{
-        flex: 1,
-        justifyContent:"center",
-        alignItems:"center",
-    }
+  
 });

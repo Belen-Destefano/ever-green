@@ -4,9 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../store/cart/cart.slice';
 
 import CustomText from '../../components/customText/customText';
-import { ActivityIndicator, Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import {  Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { COLORS } from '../../themes';
 import { useGetProductByIdQuery } from '../../store/products/api';
+import { LoadingIndicator } from '../../components';
 
 
 function ProductDetail({ navigation, route }) {
@@ -23,12 +24,12 @@ function ProductDetail({ navigation, route }) {
     dispatch(addToCart(product));
   };
 
-  if (isLoading)
-  return (
-    <View style={styles.containerLoader}>
-      <ActivityIndicator size="large" color={COLORS.primary} />
-    </View>
-  );
+  
+
+  if (isLoading) {
+    return <LoadingIndicator />;
+  }
+
 
 
 

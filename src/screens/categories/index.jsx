@@ -1,6 +1,6 @@
 import React from 'react';
-import { ActivityIndicator, FlatList, SafeAreaView, View } from 'react-native';
-import { CategoryItem } from '../../components';
+import {  FlatList, SafeAreaView, View } from 'react-native';
+import { CategoryItem, LoadingIndicator } from '../../components';
 
 
 import {styles} from './styles'
@@ -8,7 +8,7 @@ import {styles} from './styles'
 import { ORIENTATION } from '../../constants/orientation';
 import useOrientation from '../../hooks/useOrientation';
 import { useGetCategoriesQuery } from '../../store/categories/api';
-import { COLORS } from '../../themes';
+
 
 
 
@@ -23,14 +23,10 @@ function Categories({ navigation }) {
     navigation.navigate('Products', { categoryId, color, name });
   };
  
-  if (isLoading)
-    return (
-      <View style={styles.containerLoader}>
-        <ActivityIndicator size="large" color={COLORS.primary} />
-        
-      </View>
-    )
-  ;
+ 
+  if (isLoading) {
+    return <LoadingIndicator />;
+  }
   
   return (
     <SafeAreaView style={styles.container}>

@@ -17,4 +17,16 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 20,
   },
+  containerInfo:{
+    paddingVertical: 50,
+    gap:10,    
+    width: '85%',
+
+  },
+  emailText:{
+
+  },
+  addressText:{
+
+  },
 });

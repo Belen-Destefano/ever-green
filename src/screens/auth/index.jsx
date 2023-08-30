@@ -1,10 +1,12 @@
 import {  useReducer, useState } from 'react';
 import { View, TouchableOpacity, ImageBackground } from 'react-native';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import CustomText from '../../components/customText/customText';
 
 import { styles } from './styles';
 import { useSignInMutation, useSignUpMutation } from '../../store/auth/api';
+import { useCreateUserMutation, useGetUserQuery } from '../../store/user/api';
+
 import { setUser } from '../../store/auth/auth.slice';
 import { COLORS } from '../../themes';
 import { InputForm } from '../../components';
@@ -53,27 +55,52 @@ const Auth = () => {
   const [signUp] = useSignUpMutation();
 
 
+  // API QUE HICE PARA ENVIAR USUARIO A FIREBASE   
+  const [createUser, { userdata = data }] = useCreateUserMutation();
+  // const { data: getUserData, isLoading, isError } = useGetUserQuery();
+
+
+
 
   const onHandlerAuth = async () => {
     
     try {
       if (isLogin) {
-        
         const result = await signIn({
-        email: formState.email.value,
-        password: formState.password.value,
+          email: formState.email.value,
+          password: formState.password.value,
         });
-        if (result?.data) dispatch(setUser(result.data));
 
-        
-      } else {
+        if (result?.data) {
+          dispatch(setUser(result.data));
+      
+          const localId = result.data.localId;          
+          // console.log({localId})         
+         
+        }
+      }
+        else {
         
         const resultSignUp = await signUp({  email: formState.email.value,
         password: formState.password.value, });
-        
-     
 
-    
+       
+
+        // LOGICA PARA QUE USUARIO CREADO SE ENVIE A FIREBASE
+        const  localId  = resultSignUp?.data.localId; 
+     
+        // creo objeto newUser para enviar a firebase
+        if (resultSignUp) {
+          const newUser = {
+            id: localId,
+            email: formState.email.value          
+          };
+
+          // Ahora envio objeto por medio de la mutation de la api que hice userApi
+          const resulltNewUser = await createUser({newUser, localId});          
+          
+        }
+       
         
       }
     } catch (error) {

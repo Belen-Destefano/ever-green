@@ -1,8 +1,8 @@
-import { View, TouchableOpacity, FlatList, ImageBackground,useWindowDimensions, ActivityIndicator } from "react-native";
+import { View, TouchableOpacity, FlatList, ImageBackground,useWindowDimensions } from "react-native";
 import { useState } from "react";
 import { Ionicons } from '@expo/vector-icons';
 import { styles } from "./styles";
-import { Input } from '../../components';
+import { Input, LoadingIndicator } from '../../components';
 import { COLORS } from "../../themes";
 
 
@@ -62,12 +62,11 @@ function Product ({ navigation, route }){
     const {width} = useWindowDimensions();
     const istablet = width > 650;
 
-    if (isLoading)
-    return (
-      <View style={styles.containerLoader}>
-        <ActivityIndicator size="large" color={COLORS.primary} />
-      </View>
-    );
+    
+
+    if (isLoading) {
+        return <LoadingIndicator />;
+    }
 
     return (
        <View style={styles.container}>       

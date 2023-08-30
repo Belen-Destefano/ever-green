@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   mapImageUrl: '',
+  address: '', 
 };
 
 const addressSlice = createSlice({
@@ -11,9 +12,12 @@ const addressSlice = createSlice({
     saveMapImageUrl(state, action) {
       state.mapImageUrl = action.payload;
     },
+    saveAddress(state, action) { 
+      state.address = action.payload;
+    },
   },
 });
 
-export const { saveMapImageUrl } = addressSlice.actions;
+export const { saveMapImageUrl, saveAddress  } = addressSlice.actions;
 
 export default addressSlice.reducer;

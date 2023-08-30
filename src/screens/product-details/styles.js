@@ -76,9 +76,5 @@ export const styles = StyleSheet.create({
     color: COLORS.secodary,
 
   },
-  containerLoader: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+  
 });

@@ -13,6 +13,8 @@ import { useUpdateAddressMutation } from '../../../store/settings/api';
 const CreateAddress = ({ route, navigation }) => {
 
   const localId = useSelector((state) => state.auth.user.localId);
+  const email = useSelector((state) => state.auth.user.email);
+
   const mapImageUrl = useSelector((state) => state.address.mapImageUrl);
   const [location, setLocation] = useState(null);
   const [updateAddress] = useUpdateAddressMutation();
@@ -42,9 +44,10 @@ const CreateAddress = ({ route, navigation }) => {
             address: addressName.data,
             coords: location,
             image: mapImageUrl,
+           
           });
         }
-        updateAddress({ localId, address: addressName.data, location });
+        updateAddress({ localId, address: addressName.data, location, email });
       };
       
       onHandlerUpdateLocation();

@@ -22,12 +22,13 @@ export const settingsApi = createApi({
     }),
 
     updateAddress: builder.mutation({
-      query: ({ localId, address, location }) => ({
+      query: ({ localId, address, location, email }) => ({
         url: `/users/${localId}.json`,
         method: 'PATCH',
         body: {
           address,
           location,
+          // email,
         },
       }),
     }),

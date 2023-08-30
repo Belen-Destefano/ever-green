@@ -112,10 +112,6 @@ export const styles = StyleSheet.create({
     notFoundTextTablet:{
         fontSize: 30,
     },
-    containerLoader: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-      },
+   
 
 });
