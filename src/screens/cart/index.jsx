@@ -12,11 +12,16 @@ import {
 } from '../../store/cart/cart.slice';
 import CustomText from '../../components/customText/customText';
 import { useCreateOrderMutation } from '../../store/orders/api';
+import { useGetProfileQuery } from '../../store/settings/api';
 
 const Cart = ({ navigation }) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.items);
   const total = useSelector((state) => state.cart.total);
+
+  const localId = useSelector((state) => state.auth.user.localId);
+  const { data: userData, isLoading: isLoadingUserData } = useGetProfileQuery({ localId });
+  
 
   const [createOrder, { data, isError, error, isLoading }] = useCreateOrderMutation();
 
@@ -39,10 +44,9 @@ const Cart = ({ navigation }) => {
       total,
       user: {
         id: 1,
-        name: 'John Doe',
-        address: '123 Street',
-        phone: '123456789',
-        email: 'johndoe@gmail.com',
+        name: userData.email,
+        address: userData.address,
+        id: userData.id
       },
       payment: {
         method: 'VISA',
@@ -73,6 +77,7 @@ const Cart = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+      <CustomText style={styles.quantityText} type="regular">Las cantidades se refieren a metro cuadrado en caso de espacios y a unidades en caso de elementos individuales </CustomText>
       <FlatList
         data={cart}
         renderItem={({ item }) => (

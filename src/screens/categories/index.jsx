@@ -22,7 +22,7 @@ function Categories({ navigation }) {
   const onSelectCategory = ({ categoryId, color, name }) => {
     navigation.navigate('Products', { categoryId, color, name });
   };
- 
+
  
   if (isLoading) {
     return <LoadingIndicator />;

@@ -89,19 +89,40 @@ const LocationSelector = ({ onLocation, coordinate , navigation  }) => {
   };
 
   // si clickearon select on map y ya hay picked location (seteada por ubicacion actual o por coordinate-del flatlist o mapa ya seleccionado), o en vez de picked location estan las coordenadas del firebase en savedMap... va a navegar a maps con esa info a creen maps para la initialRegion
+  // const onSelectMap = async () => {
+  //   if (pickedLocation || savedMap) {
+  //     const locationToShow = pickedLocation ? pickedLocation : savedMap;
+      
+  //     navigation.navigate('Maps', { locationToShow });
+  //   } else {
+  //     const cordobaLocation = {
+  //       name: 'Provincia de Córdoba',
+  //       lat: -31.5, // Latitud de la provincia de Córdoba
+  //       lng: -64.2, // Longitud de la provincia de Córdoba
+  //     };
+
+  //     navigation.navigate('Maps', { locationToShow: cordobaLocation});
+  //   }
+  // };
   const onSelectMap = async () => {
+    let locationToShow;
+  
     if (pickedLocation || savedMap) {
-      const locationToShow = pickedLocation ? pickedLocation : savedMap;
-      navigation.navigate('Maps', { locationToShow });
+      locationToShow = pickedLocation || savedMap;
     } else {
-      const cordobaLocation = {
+      locationToShow = {
         name: 'Provincia de Córdoba',
         lat: -31.5, // Latitud de la provincia de Córdoba
         lng: -64.2, // Longitud de la provincia de Córdoba
       };
-      navigation.navigate('Maps', { locationToShow: cordobaLocation});
-    }
+    }  
+  
+    // Espera hasta que locationToShow esté resuelto antes de la navegación
+    await new Promise(resolve => setTimeout(resolve, 1000));
+  
+    navigation.navigate('Maps', { locationToShow });
   };
+  
   
 
   // puse un effect con array de dep a pickedLocation para que envie al store la imagen (unicamente cuando es formada por pickedlocation ()). por que la imagen del store solo se usa cuando se guarda la info en la db en createAddress y no vino del flatlist de la db. osea picked location del getuserlocation o del selectonmap

@@ -57,8 +57,6 @@ const Auth = () => {
 
   // API QUE HICE PARA ENVIAR USUARIO A FIREBASE   
   const [createUser, { userdata = data }] = useCreateUserMutation();
-  // const { data: getUserData, isLoading, isError } = useGetUserQuery();
-
 
 
 
@@ -75,7 +73,7 @@ const Auth = () => {
           dispatch(setUser(result.data));
       
           const localId = result.data.localId;          
-          // console.log({localId})         
+         
          
         }
       }
@@ -97,7 +95,9 @@ const Auth = () => {
           };
 
           // Ahora envio objeto por medio de la mutation de la api que hice userApi
-          const resulltNewUser = await createUser({newUser, localId});          
+          const resulltNewUser = await createUser({newUser, localId});  
+          
+          
           
         }
        

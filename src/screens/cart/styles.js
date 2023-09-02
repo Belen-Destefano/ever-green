@@ -47,4 +47,9 @@ export const styles = StyleSheet.create({
   totalPriceText: {
     color: COLORS.white,
   },
+  quantityText:{
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    color: COLORS.secodary
+  },
 });

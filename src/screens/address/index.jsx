@@ -29,10 +29,13 @@ const Address = ({ navigation }) => {
     }, [])
   );
 
+   // Filtrar elementos sin imagen
+   const filteredPlaces = places.filter((item) => !!item.image);
+
   return (
     <View style={styles.container}>
       <FlatList
-        data={places}
+        data={filteredPlaces}
         renderItem={({ item }) => {
           const { lat, lng } = JSON.parse(item.coords);
 
@@ -46,9 +49,11 @@ const Address = ({ navigation }) => {
           return (
             <TouchableOpacity onPress={handleItemPress}>
               <View style={styles.itemContainer}>
+                
                 <View style={styles.mapImageContainer}>
                   <Image source={{ uri: item.image }} style={styles.mapImage} />
                 </View>
+            
                 <View style={styles.itemDetailsContainer}>
                   <CustomText style={styles.itemAddress}>{item.address}</CustomText>
                   <CustomText style={styles.itemCoords}>{`Lat: ${lat} Lng: ${lng}`}</CustomText>

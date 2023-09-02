@@ -5,7 +5,7 @@ import { COLORS } from '../../../themes';
 export const styles = StyleSheet.create({
   orderItemContainer: {
     flex: 1,
-    height: 100,
+    height: 80,
     flexDirection: 'row',
     backgroundColor: COLORS.white,
     shadowColor: '#000',
@@ -16,9 +16,10 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.22,
     shadowRadius: 2.22,
     elevation: 3,
-    padding: 15,
+    padding: 10,
     marginHorizontal: 15,
     marginTop: 15,
+    marginBottom: 10,
     justifyContent: 'space-around',
     alignItems: 'flex-start',
     borderRadius: 10,

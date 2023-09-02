@@ -15,6 +15,7 @@ const CreateAddress = ({ route, navigation }) => {
   const localId = useSelector((state) => state.auth.user.localId);
   const email = useSelector((state) => state.auth.user.email);
 
+
   const mapImageUrl = useSelector((state) => state.address.mapImageUrl);
   const [location, setLocation] = useState(null);
   const [updateAddress] = useUpdateAddressMutation();

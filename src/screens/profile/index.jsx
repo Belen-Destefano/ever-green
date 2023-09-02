@@ -16,12 +16,13 @@ const Profile = () => {
   const adressStore = useSelector((state) => state.address.address);
   const [uploadImageProfile, { data, isLoading, error }] = useUpdateImageProfileMutation();
   const { data: userData, isLoading: isLoadingUserData } = useGetProfileQuery({ localId });
+
   const [address, setAddress] = useState(''); 
   const dispatch = useDispatch();  
   const email= (useSelector((state) => state.auth.user.email));
 
   const onHandlerImage = async ({ uri, base64 }) => {
-    console.warn({ uri, base64 });
+    // console.warn({ uri, base64 });
     await uploadImageProfile({ localId, image: `data:image/jpeg;base64,${base64}` });
   };
   

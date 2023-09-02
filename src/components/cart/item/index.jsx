@@ -15,7 +15,8 @@ const CartItem = ({ id, categoryId, name, price, image, currency, quantity, stoc
       <View style={styles.detailContainer}>
         <CustomText style={styles.name} type="regular" numberOfLines={1} ellipsizeMode="tail">{name}</CustomText>
         <CustomText style={styles.price} type="bold">{`${currency.code} ${price}`}</CustomText>
-        <CustomText style={styles.qty} type="regular">{`qty: ${quantity} stock: ${stock}`}</CustomText>
+        <CustomText style={styles.qty} type="regular">{`qty: ${quantity} `}</CustomText>
+        {/* <CustomText style={styles.qty} type="regular">{`qty: ${quantity} stock: ${stock}`}</CustomText> */}
         <View style={styles.actionContainer}>
         <TouchableOpacity style={styles.increaseButton} onPress={() => onIncreaseCartItem(id)}>
             <CustomText style={styles.increaseButtonText} type="bold">+</CustomText>

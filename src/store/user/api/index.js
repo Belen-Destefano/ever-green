@@ -8,26 +8,14 @@ export const userApi = createApi({
   endpoints: (builder) => ({
     createUser: builder.mutation({
       query: ({newUser, localId}) => ({
-        url: `/users/${localId}.json`,
-        method: 'PATCH',
+      
+        url: `/users/${localId}.json`,    
+        method: 'PUT',
         body: newUser,
       }),
       invalidatesTags: ['User'],
-    }),
-    // getUser: builder.query({
-    //   query: () => `/users.json`,
-    //   transformResponse: (response) => {
-    //     if (!response) return [];
-    //     return Object?.keys(response)?.map((key) => ({
-    //       id: key,
-    //       ...response[key],
-    //     }));
-    //   },
-    //   providesTags: ['User'],
-    // }),
+    }),  
 
-    
-    
   }),
 });
 
