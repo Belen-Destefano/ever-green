@@ -31,21 +31,24 @@ function ShopNavigator(){
             headerTintColor: COLORS.white,
             animation: 'fade_from_bottom',
            
-
+        
             headerRight: () => (
              
-                <TouchableOpacity
+                <View style={styles.iconContainer}>
+                  <TouchableOpacity
                     style={styles.icon}
                     onPress={() => navigation.navigate('SettingsStack')}>
                     <Ionicons name="settings-outline" size={24} color={COLORS.white} />
-                </TouchableOpacity>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={styles.icon} onPress={() => dispatch(logout())}>
+                <Ionicons name="ios-log-out-outline" size={24} color={COLORS.white} />
+              </TouchableOpacity>
+                </View>
                
             ),
             headerLeft: () => (             
-                // <Logo/>          
-                <TouchableOpacity style={styles.icon} onPress={() => dispatch(logout())}>
-                <Ionicons name="ios-log-out-outline" size={24} color={COLORS.white} />
-              </TouchableOpacity>
+                <Logo/>          
+              
             ),  
            
             })}>
@@ -63,6 +66,7 @@ function ShopNavigator(){
                         </TouchableOpacity> 
                     ),
                     title: route.params.name,
+                    headerRight: null,
                 }                
             )} 
             />
@@ -78,6 +82,7 @@ function ShopNavigator(){
                         </TouchableOpacity>
                     ),
                     title: route.params.name,
+                    headerRight: null,
                 }
             )}
             />
@@ -112,6 +117,12 @@ const styles = StyleSheet.create({
     icon: {
         marginRight: Platform.OS === 'android' ? 15 : 0,
     },
+
+    iconContainer: {
+        flexDirection: 'row', // Coloca los elementos en fila horizontal
+        alignItems: 'center', // Centra los elementos verticalmente
+        // Otros estilos que desees aplicar
+      },
 });
 
 export default ShopNavigator;

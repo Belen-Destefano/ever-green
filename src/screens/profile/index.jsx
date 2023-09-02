@@ -1,4 +1,4 @@
-import {  View } from 'react-native';
+import {  ImageBackground, View } from 'react-native';
 import { useSelector } from 'react-redux';
 
 import { styles } from './styles';
@@ -16,6 +16,9 @@ const Profile = () => {
   const adressStore = useSelector((state) => state.address.address);
   const [uploadImageProfile, { data, isLoading, error }] = useUpdateImageProfileMutation();
   const { data: userData, isLoading: isLoadingUserData } = useGetProfileQuery({ localId });
+
+  const backgroundImageURL = 'https://i.postimg.cc/9FQzYxN5/fondo.jpg';
+
 
   const [address, setAddress] = useState(''); 
   const dispatch = useDispatch();  
@@ -38,27 +41,30 @@ const Profile = () => {
  
 
   return (
-    <View style={styles.container}>
+    <ImageBackground
+      source={{ uri: backgroundImageURL }}
+      style={styles.container}
+    >
       <View style={styles.header}>
         <ImageSelector profileImage={userData?.profileImage} onSelect={onHandlerImage} />
 
 
          <View style={styles.containerInfo}>
             {email && (
-              <CustomText style={styles.emailText} type="medium" numberOfLines={1} ellipsizeMode="tail">
-                - Email: {email} 
+              <CustomText style={styles.emailText} type="bold" numberOfLines={1} ellipsizeMode="tail">
+                Email: {email} 
               </CustomText>
             )}
             {address && (
-              <CustomText style={styles.addressText} type="medium" numberOfLines={1} ellipsizeMode="tail">
-                - Address: {address} 
+              <CustomText style={styles.addressText} type="bold" numberOfLines={1} ellipsizeMode="tail">
+                Address: {address} 
               </CustomText>
             )}
         </View>
 
         {isLoading && <LoadingIndicator />}
       </View>
-    </View>
+    </ImageBackground>
   );
 };
 

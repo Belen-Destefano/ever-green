@@ -24,9 +24,9 @@ export const styles = StyleSheet.create({
 
   },
   emailText:{
-
+    color: COLORS.secodary
   },
   addressText:{
-
+    color: COLORS.secodary
   },
 });
