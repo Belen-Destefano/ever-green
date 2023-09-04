@@ -16,7 +16,10 @@
     "ios": {
       "supportsTablet": true,
       "requireFullScreen": true,
-      "bundleIdentifier": "com.ever-green.ever-green"
+      "bundleIdentifier": "com.ever-green.ever-green",
+      "config": {
+        "googleMapsApiKey": "AIzaSyCDYal9INldD5jhBrjZC7ATnwyqC1zF7cE"
+      }
     },
     "plugins": [
       [
@@ -53,7 +56,13 @@
         "android.permission.RECORD_AUDIO",
         "android.permission.ACCESS_COARSE_LOCATION",
         "android.permission.FOREGROUND_SERVICE"
-      ]
+      ],
+      "config": {
+        "googleMaps": {
+        "apiKey": "AIzaSyCDYal9INldD5jhBrjZC7ATnwyqC1zF7cE"
+        }
+      }
+        
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -65,3 +74,5 @@
     }
   }
 }
+
+
