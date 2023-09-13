@@ -38,6 +38,7 @@ const ImageSelector = ({ profileImage, onSelect }) => {
   const onHandleTakePhoto = async () => {  
    
     const isCameraPermission = await verifyPermissions();
+    console.log({verifyPermissions});
     if (!isCameraPermission) return ;
    
     const result = await launchCameraAsync({
@@ -48,6 +49,7 @@ const ImageSelector = ({ profileImage, onSelect }) => {
       base64: true,
     });  
     
+    console.log({launchCameraAsync});
    
 
     await onSelect({ uri: result.assets[0].uri, base64: result.assets[0].base64 });
