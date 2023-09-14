@@ -1,7 +1,6 @@
 import { useFocusEffect } from '@react-navigation/native';
 import { useCallback, useState } from 'react';
-import { View, TouchableOpacity, Image } from 'react-native';
-import { FlatList } from 'react-native-gesture-handler';
+import { View, TouchableOpacity, Image, FlatList } from 'react-native';
 import CustomText from '../../components/customText/customText';
 
 import { styles } from './styles';

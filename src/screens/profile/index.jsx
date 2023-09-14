@@ -25,7 +25,7 @@ const Profile = () => {
   const email= (useSelector((state) => state.auth.user.email));
 
   const onHandlerImage = async ({ uri, base64 }) => {
-    // console.warn({ uri, base64 });
+    
     await uploadImageProfile({ localId, image: `data:image/jpeg;base64,${base64}` });
   };
   
